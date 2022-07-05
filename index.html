@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <title>Weather app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="top">
+      <div class="latlong">
+        <!-- <form action=""> -->
+        <div class="form-input">
+          <!-- data input -->
+          <h3 id="form_title">Know your <span>weather</span> by specifying</h3>
+          <br>
+          <div class="long">
+            <label for="longitude">Longitude</label><br>
+            <input type="number" name="longitude" placeholder="36.8219" value="" id="longitude" max="180" min="-180" required>
+          </div>
+
+          <div class="lat">
+            <label for="latitude">Latitude</label><br>
+            <input type="number" name="latitude" value="" placeholder="1.2921" id="latitude" max="90" min="-90" required>
+          </div>
+
+          <div class="send">
+            <input type="submit" value="Determine" id="query-btn" onclick=findData()>
+          </div>
+        </div>
+        <!-- </form> -->
+      </div>
+      <div class="current-weather">
+        <h3 id="day" align='' style="font-size:25px;">Today's Weather</h3>
+        <div class="temp-card" style="margin-top:20px">
+          <div class="icon-img">
+            <img src="./images/temperature.png" alt="temp icon">
+          </div>
+          <div class="desc">
+            <h5>Temperature</h5>
+            <h3 id="temp-id"></h3>
+          </div>
+        </div>
+
+        <div class="temp-card">
+          <div class="icon-img">
+            <img src="./images/humidity.png" alt="-icon">
+          </div>
+          <div class="desc">
+            <h5>humidity</h5>
+            <h3 id="humidity-id"></h3>
+          </div>
+
+        </div>
+
+        <div class="temp-card">
+          <div class="icon-img">
+            <img src="./images/windspeed.png" alt="temp icon">
+
+          </div>
+          <div class="desc">
+            <h5>windspeed</h5>
+            <h3 id="wind-id"></h3>
+          </div>
+
+        </div>
+
+
+        <div class="temp-card">
+          <div class="icon-img">
+            <img src="./images/cloudy.png" alt="temp icon">
+
+          </div>
+          <div class="desc">
+            <h5>Cloud Cover</h5>
+            <h3 id="cloud-id"></h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bottom-div">
+
+      <div class="swipper">
+        <h3 id="day" align='left' style="color:#eb0745; font-size:18;">Swipe And Click on The time Card to view Results</h3>
+      </div>
+      <div class="bottom">
+        <div class="time" id="down-timer">
+        </div>
+      </div>
+
+    </div>
+
+    <script src="index.js" charset="utf-8"></script>
+  </body>
+  </html>
